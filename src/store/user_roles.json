@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "name": "Name",
+    "type": "Type",
+    "description": "Description",
+    "images": [],
+    "editable": false,
+    "inactive": false
+  }
+]

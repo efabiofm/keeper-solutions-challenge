@@ -20,6 +20,7 @@
         <v-btn
           depressed
           color="primary"
+          @click="createNewRole"
         >
           Create new role
         </v-btn>
@@ -69,6 +70,11 @@ export default {
       roleStatusOptions: ['Active', 'Inactive', 'Active and Inactive'],
       search: null
     }
+  },
+  methods: {
+    createNewRole() {
+      this.$router.push({ name: 'UserRoleEdit' })
+    }
   }
 }
 </script>
@@ -78,7 +84,6 @@ export default {
   background: white;
   margin-top: 28px;
   padding: 40px;
-  height: 90vh;
 }
 .user-roles-items {
   display: flex;

@@ -1,11 +1,54 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Name",
     "type": "Type",
     "description": "Description",
-    "images": [],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+    ],
+    "editable": true,
+    "inactive": false,
+    "dateCreated": "07/29/2021",
+    "lastUpdate": ""
+  },
+  {
+    "id": "2",
+    "name": "Name",
+    "type": "Type",
+    "description": "Description",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+    ],
+    "editable": true,
+    "inactive": false,
+    "dateCreated": "07/29/2021",
+    "lastUpdate": "07/29/2021"
+  },
+  {
+    "id": "3",
+    "name": "Name",
+    "type": "Type",
+    "description": "Description",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+    ],
     "editable": false,
-    "inactive": false
+    "inactive": true,
+    "dateCreated": "07/29/2021",
+    "lastUpdate": ""
   }
 ]

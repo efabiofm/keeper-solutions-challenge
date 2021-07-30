@@ -12,7 +12,8 @@ export default new Vuex.Store({
   getters: {
     getRole: (state) => (id) => {
       return find(state.userRoles, { id })
-    }
+    },
+    getAllRoles: (state) => state.userRoles
   },
   mutations: {
     addRole(state, role) {

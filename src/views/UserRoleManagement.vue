@@ -4,11 +4,14 @@
     <v-row>
       <v-col>
         <v-text-field
+          v-model="search"
           append-icon="mdi-magnify"
+          placeholder="search"
         ></v-text-field>
       </v-col>
       <v-col>
         <v-select
+          v-model="filter"
           :items="roleStatusOptions"
           label="Role Status"
         ></v-select>
@@ -22,12 +25,15 @@
         </v-btn>
       </v-col>
     </v-row>
-    <div class="user-roles-items">
+    <div class="user-roles-items" v-if="items.length">
       <user-role-item
-        v-for="role in getAllRoles"
+        v-for="role in items"
         :key="role.id"
         :item="role"
       />
+    </div>
+    <div v-else>
+      No results
     </div>
   </v-container>
 </template>
@@ -42,11 +48,26 @@ export default {
     UserRoleItem
   },
   computed: {
+    items() {
+      let roles = this.getAllRoles;
+      if (this.search) {
+        roles = roles.filter(role => role.name.toLowerCase().includes(this.search))
+      }
+      if (this.filter === 'Active') {
+        roles = roles.filter(role => !role.inactive)
+      }
+      if (this.filter === 'Inactive') {
+        roles = roles.filter(role => role.inactive)
+      }
+      return roles;
+    },
     ...mapGetters(['getAllRoles'])
   },
   data() {
     return {
-      roleStatusOptions: ['Active', 'Inactive', 'Active and Inactive']
+      filter: null,
+      roleStatusOptions: ['Active', 'Inactive', 'Active and Inactive'],
+      search: null
     }
   }
 }

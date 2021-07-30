@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Name",
+    "name": "Lorem",
     "type": "Type",
     "description": "Description",
     "images": [
@@ -16,7 +16,7 @@
   },
   {
     "id": "2",
-    "name": "Name",
+    "name": "Ipsum",
     "type": "Type",
     "description": "Description",
     "images": [
@@ -37,7 +37,7 @@
   },
   {
     "id": "3",
-    "name": "Name",
+    "name": "Dolor",
     "type": "Type",
     "description": "Description",
     "images": [

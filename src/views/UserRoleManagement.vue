@@ -86,8 +86,8 @@ export default {
   padding: 40px;
 }
 .user-roles-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
 }
 </style>

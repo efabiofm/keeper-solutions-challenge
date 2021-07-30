@@ -5,7 +5,7 @@
       top
       v-model="snackbar"
     >
-      Role created succesfully
+      Role saved succesfully
       <template v-slot:action="{ attrs }">
         <v-btn
           color="red"
@@ -52,6 +52,13 @@
       </div>
       <div class="text-right">
         <v-btn
+          class="mr-2"
+          text
+          @click="back"
+        >
+          Back
+        </v-btn>
+        <v-btn
           depressed
           color="primary"
           @click="submit"
@@ -64,10 +71,14 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
+import { find } from 'lodash';
 import moment from 'moment';
 
 export default {
+  computed: {
+    ...mapGetters(['getAllRoles'])
+  },
   data() {
     return {
       item: {
@@ -82,14 +93,28 @@ export default {
     }
   },
   methods: {
+    back() {
+      this.$router.push({ name: 'UserRoleManagement' })
+    },
     submit() {
       this.$refs.userRoleForm.validate();
       if (this.valid) {
-        this.addRole(this.item)
+        if (this.item.id) {
+          this.item.lastUpdate = moment().format('DD/MM/YYYY');
+          this.updateRole(this.item);
+        } else {
+          this.addRole(this.item);
+        }
         this.snackbar = true;
       }
     },
-    ...mapMutations(['addRole'])
+    ...mapMutations(['addRole', 'updateRole'])
+  },
+  mounted() {
+    const { id } = this.$route.params;
+    if (id) {
+      this.item = find(this.getAllRoles, { id })
+    }
   }
 }
 </script>

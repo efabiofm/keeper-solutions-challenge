@@ -1,5 +1,5 @@
 <template>
-  <div class="user-role-item">
+  <div>
     <v-card outlined>
       <div class="text-right inactive-container">
         <v-chip
@@ -51,6 +51,7 @@
           <v-btn
             small
             text
+            @click="editRole"
           >
             Edit
           </v-btn>
@@ -72,6 +73,11 @@
 
 <script>
 export default {
+  methods: {
+    editRole() {
+      this.$router.push({ name: 'UserRoleEdit', params: { id: this.item.id } })
+    }
+  },
   props: {
     item: Object
   }
@@ -84,8 +90,5 @@ export default {
 }
 .inactive-container {
   height: 40px;
-}
-.user-role-item {
-  flex: 1 0 30%;
 }
 </style>
